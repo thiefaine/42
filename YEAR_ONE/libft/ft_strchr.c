@@ -1,28 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 15:11:51 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/03 18:13:09 by mdubray          ###   ########.fr       */
+/*   Created: 2014/11/03 19:06:19 by mdubray           #+#    #+#             */
+/*   Updated: 2014/11/03 20:05:23 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+char	*ft_strchr(const char *s, int c)
 {
 	int		i;
+	char	*ret;
 
 	i = 0;
-	if (s)
+	ret = (char *)malloc(ft_strlen(s) * sizeof(char) + 1);
+	if (ret)
 	{
+		if (c == '\0')
+			return ("\0");
 		while (s[i] != '\0')
 		{
-			f(s);
+			if (s[i] == c)
+			{
+				while(s[i] != '\0')
+				{
+					ret[i] = s[i];
+					i++;
+				}
+				ret[i] = '\0';
+				return (ret);
+			}
 			i++;
 		}
 	}
+	return  (NULL);
+}
+
+int		main(void)
+{
+	const char *s1 = "bon okay c'est le test";
+	char c = 't';
+	printf("%s", ft_strchr(s1, c));
+	return (0);
 }

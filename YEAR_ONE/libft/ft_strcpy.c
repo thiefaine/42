@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 15:11:51 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/03 18:13:09 by mdubray          ###   ########.fr       */
+/*   Created: 2014/11/03 18:27:21 by mdubray           #+#    #+#             */
+/*   Updated: 2014/11/03 18:38:36 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int		i;
 
 	i = 0;
-	if (s)
+	if (src && dst)
 	{
-		while (s[i] != '\0')
+		while (src[i] != '\0' || dst[i] != '\0')
 		{
-			f(s);
+			dst[i] = src[i];
 			i++;
 		}
 	}
+	return (NULL);
 }

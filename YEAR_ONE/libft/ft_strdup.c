@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 15:11:51 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/03 18:13:09 by mdubray          ###   ########.fr       */
+/*   Created: 2014/11/03 18:18:06 by mdubray           #+#    #+#             */
+/*   Updated: 2014/11/03 18:27:10 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+char	*ft_strdup(const char *s1)
 {
-	int		i;
+	char	*s2;
+	int		len;
 
-	i = 0;
-	if (s)
+	len = ft_strlen(s1);
+
+	s2 = (char *)malloc(len * sizeof(char) + 1);
+	if (s2)
 	{
-		while (s[i] != '\0')
-		{
-			f(s);
-			i++;
-		}
+		s2[len + 1] = '\0';
+		return (s2);
 	}
 }
