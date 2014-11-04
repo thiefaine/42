@@ -6,7 +6,7 @@
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:27:21 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/03 18:38:36 by mdubray          ###   ########.fr       */
+/*   Updated: 2014/11/04 14:07:12 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ char	*ft_strcpy(char *dst, const char *src)
 	i = 0;
 	if (src && dst)
 	{
-		while (src[i] != '\0' || dst[i] != '\0')
+		while (src[i] != '\0' && dst[i] != '\0')
 		{
 			dst[i] = src[i];
 			i++;
 		}
+		return (dst);
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 13:22:31 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/03 14:08:30 by mdubray          ###   ########.fr       */
+/*   Updated: 2014/11/04 11:04:47 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	*ft_memalloc(size_t size)
 {
 	void	*mem;
-	int		i;
 
 	mem = NULL;
-	i = 0;
 	if (size != 0)
 	{
 		mem = malloc(size);

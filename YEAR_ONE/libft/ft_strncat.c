@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 18:31:26 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/04 14:17:27 by mdubray          ###   ########.fr       */
+/*   Created: 2014/11/04 16:25:38 by mdubray           #+#    #+#             */
+/*   Updated: 2014/11/04 18:08:53 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	unsigned int		i;
+	int					i;
+	unsigned int		j;
 
-	i = 0;
-	if (dst && src)
+	i = ft_strlen(s1);
+	j = 0;
+	if (s1 && s2)
 	{
-		while (i <= n && dst[i] != '\0' && src[i] != '\0')
+		while (s2[j] != '\0' && j < n)
 		{
-			dst[i] = src[i];
+			s1[i] = s2[j];
 			i++;
+			j++;
 		}
-		return (dst);
+		s1[i] = '\0';
+		return (s1);
 	}
 	return (NULL);
 }

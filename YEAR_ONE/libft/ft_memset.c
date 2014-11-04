@@ -6,7 +6,7 @@
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 12:08:46 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/03 17:30:38 by mdubray          ###   ########.fr       */
+/*   Updated: 2014/11/04 11:05:08 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int		i;
+	unsigned int		i;
 
 	i = 0;
 	while (i <= len)

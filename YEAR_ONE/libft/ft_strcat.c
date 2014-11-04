@@ -6,7 +6,7 @@
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 18:43:20 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/03 19:05:06 by mdubray          ###   ########.fr       */
+/*   Updated: 2014/11/04 17:13:01 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,21 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	
+	int		i;
+	int		j;
+
+	i = ft_strlen(s1);
+	j = 0;
+	if (s1 && s2)
+	{
+		while (s2[j] != '\0')
+		{
+			s1[i] = s2[j];
+			i++;
+			j++;
+		}
+		s1[i] = '\0';
+		return (s1);
+	}
+	return (NULL);
 }

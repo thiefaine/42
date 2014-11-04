@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 18:31:26 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/04 14:17:27 by mdubray          ###   ########.fr       */
+/*   Created: 2014/11/04 19:54:53 by mdubray           #+#    #+#             */
+/*   Updated: 2014/11/04 20:22:39 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+int		tolower(int c)
 {
-	unsigned int		i;
-
-	i = 0;
-	if (dst && src)
+	if (c >= 65 && c <= 90)
 	{
-		while (i <= n && dst[i] != '\0' && src[i] != '\0')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		return (dst);
+		c += 32;
 	}
-	return (NULL);
+	return (c);
 }

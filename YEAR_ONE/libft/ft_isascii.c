@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 18:31:26 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/04 14:17:27 by mdubray          ###   ########.fr       */
+/*   Created: 2014/11/04 20:33:26 by mdubray           #+#    #+#             */
+/*   Updated: 2014/11/04 20:35:35 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+int		ft_isascii(int c)
 {
-	unsigned int		i;
-
-	i = 0;
-	if (dst && src)
-	{
-		while (i <= n && dst[i] != '\0' && src[i] != '\0')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		return (dst);
-	}
-	return (NULL);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
+	return (0);
 }

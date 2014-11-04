@@ -6,7 +6,7 @@
 /*   By: mdubray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 19:06:19 by mdubray           #+#    #+#             */
-/*   Updated: 2014/11/03 20:05:23 by mdubray          ###   ########.fr       */
+/*   Updated: 2014/11/04 19:41:41 by mdubray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,20 @@ char	*ft_strchr(const char *s, int c)
 			return ("\0");
 		while (s[i] != '\0')
 		{
-			if (s[i] == c)
+			if (s[i] == (char)c)
 			{
-				while(s[i] != '\0')
+				printf("ok\n");
+				while (s[i] != '\0')
 				{
 					ret[i] = s[i];
 					i++;
 				}
+				printf("%d\n", (int)sizeof(ret));
 				ret[i] = '\0';
 				return (ret);
 			}
 			i++;
 		}
 	}
-	return  (NULL);
-}
-
-int		main(void)
-{
-	const char *s1 = "bon okay c'est le test";
-	char c = 't';
-	printf("%s", ft_strchr(s1, c));
-	return (0);
+	return (NULL);
 }
